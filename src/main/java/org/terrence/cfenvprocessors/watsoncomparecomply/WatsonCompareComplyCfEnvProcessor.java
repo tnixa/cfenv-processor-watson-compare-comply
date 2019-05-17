@@ -1,4 +1,4 @@
-package org.terrence.testapp.envprocessor;
+package org.terrence.cfenvprocessors.watsoncomparecomply;
 
 import java.util.Map;
 
@@ -31,8 +31,6 @@ public class WatsonCompareComplyCfEnvProcessor implements CfEnvProcessor {
         // set watsonVersion to date of the released watson spring boot starter
         // version 1.0.0 was released on 2019-05-07
         String watsonVersion = "2019-05-07";
-        System.out.println("getUri: " + cfCredentials.getUri("http"));
-        System.out.println("getApikey: " + cfCredentials.getString("apikey"));
         properties.put("watson.compare-comply.url", cfCredentials.getUri("http"));
         properties.put("watson.compare-comply.iam-api-key", cfCredentials.getString("apikey"));
         properties.put("watson.compare-comply.versionDate", watsonVersion);
